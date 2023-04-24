@@ -49,6 +49,8 @@ local plugins = {
             require("plugins.configs.telescope")
         end,
     },
+
+    -- Оборачивает в скобки
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -59,6 +61,16 @@ local plugins = {
             })
         end
     },
+
+    -- Автозакрытие скобок
+    {
+        'windwp/nvim-autopairs',
+        config = function()
+            require('nvim-autopairs').setup {}
+        end
+    },
+
+    -- statusline
     {
         "nvim-lualine/lualine.nvim",
         dependencies = 'nvim-tree/nvim-web-devicons',
@@ -66,13 +78,15 @@ local plugins = {
             require("plugins.configs.lualine")
         end,
     },
+
+    -- интеграция с git
     {
         "lewis6991/gitsigns.nvim",
         branch = "release",
         config = function()
             require("plugins.configs.gitsigns")
         end,
-    }
+    },
 }
 
 return plugins
