@@ -1,0 +1,23 @@
+{
+  "Lua.telemetry.enable": false,
+  "sumneko-lua.enableNvimLuaDev": true,
+
+  "eslint.fixOnSaveTimeout": 1000,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+      "overrideConfigFile": "/home/alexey/.config/nvim/eslint/.eslintrc.js",
+      "useEslintrc": false,
+  },
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+
+}
