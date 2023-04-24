@@ -3,7 +3,7 @@ local plugins = {
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        config = function ()
+        config = function()
             require("plugins.configs.catppuccin")
         end,
     },
@@ -13,22 +13,22 @@ local plugins = {
         'akinsho/bufferline.nvim',
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
-        config = function ()
+        config = function()
             require("plugins.configs.bufferline")
         end,
     },
 
-    -- Навигация по файлам 
+    -- Навигация по файлам
     {
         "nvim-tree/nvim-tree.lua",
         opts = function()
             return require "plugins.opts.nvim-tree"
         end,
-        config = function ()
+        config = function()
             require("plugins.configs.nvim-tree")
         end,
     },
-    {"nvim-tree/nvim-web-devicons"},
+    { "nvim-tree/nvim-web-devicons" },
 
     -- Автокомплит и подсветка синтаксиса
     {
@@ -45,7 +45,7 @@ local plugins = {
     },
     {
         "nvim-telescope/telescope.nvim",
-        config = function ()
+        config = function()
             require("plugins.configs.telescope")
         end,
     },
@@ -61,16 +61,15 @@ local plugins = {
     },
     {
         "nvim-lualine/lualine.nvim",
-
         dependencies = 'nvim-tree/nvim-web-devicons',
-        config = function ()
+        config = function()
             require("plugins.configs.lualine")
         end,
     },
     {
         "lewis6991/gitsigns.nvim",
         branch = "release",
-        config = function ()
+        config = function()
             require("plugins.configs.gitsigns")
         end,
     }
