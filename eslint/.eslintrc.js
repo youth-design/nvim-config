@@ -49,6 +49,8 @@ module.exports = {
 
         "no-continue": "off",
 
-        "quote-props": "off"
+        "quote-props": "off",
+
+        "react/jsx-filename-extension": 'off',
     },
 };
