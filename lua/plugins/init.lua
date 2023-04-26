@@ -39,6 +39,11 @@ local plugins = {
         end,
     },
 
+    -- Добавляет поддержку jsx
+    {
+        "maxmellon/vim-jsx-pretty",
+    },
+
     -- Telescope - Поиск по проекту
     {
         "nvim-lua/plenary.nvim"
