@@ -1,5 +1,4 @@
 local set = vim.api.nvim_set_option
-
 set('encoding', 'UTF-8')
 set('number', true)
 
