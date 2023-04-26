@@ -7,5 +7,5 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fz', "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
 
 -- git
-vim.keymap.set('n', '<leader>cm', "<cmd> Telescope git_commits <CR>", {})
+vim.keymap.set('n', '<leader>gm', "<cmd> Telescope git_commits <CR>", {})
 vim.keymap.set('n', '<leader>gs', "<cmd> Telescope git_status <CR>", {})
