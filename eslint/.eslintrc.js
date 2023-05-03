@@ -11,6 +11,7 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['react'],
+    ignorePatterns: ['config/index.js', 'webpack.config.js'],
     settings: {
         'import/resolver': {
             alias: {
