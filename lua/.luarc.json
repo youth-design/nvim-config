@@ -1,0 +1,14 @@
+{
+    "workspace.library": [
+        "/home/alexey/.config/nvim",
+        "/home/alexey/.local/share/nvim/lazy/lazy.nvim",
+        "/home/alexey/.local/share/nvim/lazy/mason-lspconfig.nvim",
+        "/home/alexey/.local/share/nvim/lazy/mason.nvim",
+        "/home/alexey/.local/share/nvim/lazy/nvim-lspconfig",
+        "/home/alexey/.local/share/nvim/lazy/gitsigns.nvim",
+        "/usr/share/nvim/runtime",
+        "/usr/lib/nvim",
+        "/home/alexey/.local/state/nvim/lazy/readme",
+        "${3rd}/luassert/library"
+    ]
+}

@@ -30,20 +30,6 @@ local plugins = {
     },
     { "nvim-tree/nvim-web-devicons" },
 
-    -- Автокомплит и подсветка синтаксиса
-    {
-        "neoclide/coc.nvim",
-        branch = "release",
-        config = function()
-            require("plugins.configs.coc")
-        end,
-    },
-
-    -- Добавляет поддержку jsx
-    {
-        "maxmellon/vim-jsx-pretty",
-    },
-
     -- Telescope - Поиск по проекту
     {
         "nvim-lua/plenary.nvim"
@@ -53,6 +39,21 @@ local plugins = {
         config = function()
             require("plugins.configs.telescope")
         end,
+    },
+
+    -- Подсветка и автокомплит
+    {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require "plugins.configs.lspconfig"
+        end
     },
 
     -- Оборачивает в скобки
