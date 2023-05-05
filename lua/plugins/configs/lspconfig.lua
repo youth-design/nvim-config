@@ -5,6 +5,8 @@ require("mason-lspconfig").setup({
 		"tsserver",
 		"html",
 		"cssls",
+        "gopls",
+        "golangci_lint_ls",
 	},
 })
 local lspconfig = require("lspconfig")
@@ -22,7 +24,7 @@ cmp.setup({
 	},
 	window = {
 		-- completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		-- documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -99,27 +101,6 @@ vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
-lspconfig.lua_ls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-					[vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
-				},
-				maxPreload = 100000,
-				preloadFileSize = 10000,
-			},
-		},
-	},
-})
 
 lspconfig.tsserver.setup({
 	on_attach = on_attach,
@@ -132,6 +113,16 @@ lspconfig.html.setup({
 })
 
 lspconfig.cssls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.gopls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.golangci_lint_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -151,7 +142,14 @@ lspconfig.lua_ls.setup({
 			},
 			workspace = {
 				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
+				-- library = vim.api.nvim_get_runtime_file("", true),
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+					[vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+				},
+				maxPreload = 100000,
+				preloadFileSize = 10000,
 				checkThirdParty = false,
 			},
 			-- Do not send telemetry data containing a randomized but unique identifier
